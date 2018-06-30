@@ -21,7 +21,7 @@ gulp.task('blockly', function() {
       var DOMParser = window.DOMParser;
       var xmlshim = require('xmlshim');
       var XMLSerializer = xmlshim.XMLSerializer;
-      var DOMParser = xmlshim.DOMParser; 
+      var DOMParser = xmlshim.DOMParser;
       module.exports = (function(){ // `,
           //....ORIGINAL CODE....
           `Blockly.goog=goog;return Blockly;
@@ -73,13 +73,6 @@ gulp.task('js', function() {
       .pipe(gulp.dest('lib'))
 });
 
-gulp.task('dart', function() {
-  return gulp.src('blockly/dart_compressed.js')
-      .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.Dart;}'))
-      .pipe(replace(/window\./g, ''))
-      .pipe(gulp.dest('lib'))
-});
-
 gulp.task('python', function() {
   return gulp.src('blockly/python_compressed.js')
       .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.Python;}'))
@@ -92,10 +85,10 @@ gulp.task('php', function() {
       .pipe(gulp.dest('lib'))
 });
 
-gulp.task('lua', function() {
-  return gulp.src('blockly/lua_compressed.js')
-      .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.Lua;}'))
-      .pipe(gulp.dest('lib'))
+gulp.task('aesl', function() {
+    return gulp.src('blockly/aesl_compressed.js')
+    .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.AESL;}'))
+    .pipe(gulp.dest('lib'))
 });
 
 gulp.task('i18n', function() {
@@ -105,18 +98,17 @@ gulp.task('i18n', function() {
     .pipe(gulp.dest('lib/i18n/'))
 });
 
-gulp.task('build', [
+gulp.task('build', gulp.series(
   'blocks',
   'blocks_browser',
   'blockly',
   'blockly_browser',
   'i18n',
+  'aesl',
   'js',
   'php',
-  'dart',
-  'python',
-  'lua',
-]);
+  'python'
+));
 
 
 
