@@ -8,7 +8,7 @@ This fork adds AESL support for Thymio (and uses an older blockly version).
 
 ## Install
 ```
-npm i @mobsya/node-blockly
+npm i @mobsya-association/node-blockly
 ```
 ## Usage
 
@@ -16,7 +16,7 @@ npm i @mobsya/node-blockly
 
 All generators
 ```js
-var Blockly = require('@mobsya/node-blockly/browser');
+var Blockly = require('@mobsya-association/node-blockly/browser');
 ```
 
 ## Internationalization
@@ -28,6 +28,25 @@ Blockly.setLocale(De)
 ```
 
 Dynamic imports also works but Blockly doesn't re-render workspace. You must [re-render it manually after locale loaded](https://github.com/Mobsya/Mobsya.github.io/blob/master/blockly/index.js#L6)
+
+## Generate the @mobsya-association/node-blockly npm package
+
+In order to generate and publish the @mobsya-association/node-blockly , you will first need to build the compressed resources in the blockly submodule. 
+
+```bash
+cd blockly
+python build.py
+```
+
+After that this script has been succesfully executed, from the root directory you can launch
+
+```bash
+cd .. # if still under the blockly directory
+npm publish
+```
+
+
+
 
 
 
