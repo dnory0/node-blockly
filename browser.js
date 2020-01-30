@@ -31,6 +31,8 @@ try {
         Blockly.setLocale(require('./lib/i18n/es'))
     else if(language == 'it')
         Blockly.setLocale(require('./lib/i18n/it'))
+	else if(language == 'pl')
+        Blockly.setLocale(require('./lib/i18n/pl'))
     else
         Blockly.setLocale(require('./lib/i18n/en'))
 }
