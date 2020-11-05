@@ -14,13 +14,13 @@ try {
     console.log(file)
     var language = file.match(re)[1];
     if (!language) {
-
-        if (window.navigator.languages) {
-            language = window.navigator.languages[0];
-        } else {
-            language = window.navigator.userLanguage || window.navigator.language;
-        }
-        language = language.substring(0, 2);
+        language = 'ar'; // arabic should be the default language
+        // if (window.navigator.languages) {
+        //     language = window.navigator.languages[0];
+        // } else {
+        //     language = window.navigator.userLanguage || window.navigator.language;
+        // }
+        // language = language.substring(0, 2);
     }
 
     if(language == 'de')
@@ -33,11 +33,13 @@ try {
         Blockly.setLocale(require('./lib/i18n/it'))
 	else if(language == 'pl')
         Blockly.setLocale(require('./lib/i18n/pl'))
-    else
+	else if(language == 'en')
         Blockly.setLocale(require('./lib/i18n/en'))
+    else
+        Blockly.setLocale(require('./lib/i18n/ar'))
 }
 catch(e) {
-    Blockly.setLocale(require('./lib/i18n/en'))
+    Blockly.setLocale(require('./lib/i18n/ar'))
 }
 
 Blockly.Blocks = Object.assign(Blockly.Blocks, require('./lib/blocks_compressed_browser')(Blockly));

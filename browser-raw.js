@@ -9,7 +9,7 @@ Blockly.utils.getMessageArray_ = function () {
   return Blockly.Msg
 }
 
-Blockly.setLocale(require('./lib/i18n/en'))
+Blockly.setLocale(require('./lib/i18n/ar'))
 
 Blockly.Blocks = Object.assign(Blockly.Blocks, require('./lib/blocks_compressed_browser')(Blockly));
 
