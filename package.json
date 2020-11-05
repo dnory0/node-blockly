@@ -1,5 +1,5 @@
 {
-  "name": "@mobsya-association/node-blockly",
+  "name": "ar-node-blockly",
   "version": "1.4.3",
   "description": "Blockly for Node.js and Browser as CommonJS module",
   "main": "index.js",
@@ -29,9 +29,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mobsya/node-blockly"
+    "url": "https://github.com/dnory0/ar-node-blockly"
   },
-  "author": "Mobsya <js@mobsya.org>",
+  "author": "Hocine Abdellatif Houari",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mo4islona/node-blockly/issues"
