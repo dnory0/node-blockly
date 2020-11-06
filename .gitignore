@@ -31,5 +31,7 @@ node_modules
 
 test/browser
 lib/
-
+package-lock.json
+yarn.lock
+.vscode
 
