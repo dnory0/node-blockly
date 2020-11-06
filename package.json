@@ -1,6 +1,6 @@
 {
   "name": "ar-node-blockly",
-  "version": "1.4.4",
+  "version": "1.4.5-0",
   "description": "Blockly for Node.js and Browser as CommonJS module",
   "main": "index.js",
   "directories": {
